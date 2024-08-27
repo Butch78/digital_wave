@@ -127,4 +127,19 @@ complexity of your parsing algorithm.
 Time taken to parse trades: 0.000353793 seconds
  ```
 
-When parsing the objects into an Array of objects it can be up to 3x slower 0.000128569 seconds vs 0.000353793 seconds when parsing the objects into a vector of objects. The complexity of the parsing algorithm is O(n) where n is the number of trades that are being parsed. The algorithm loops through each trade and parses the trade into a json object. The algorithm then pushes the json object into a vector of json objects. The algorithm then prints the vector of json objects. The algorithm is able to parse the incoming stream of trades and print each trade in the form specified in the task. The comments on the json objects do not display in the output.
+## Algorithmic Complexity
+
+**JSON Parsing**: (O(n)), where (n) is the size of the JSON string.
+**Formatting Trades**: (O(m)), where (m) is the number of trades in the JSON array.
+
+Since the JSON parsing and formatting trades are sequential operations, the overall complexity is the sum of their complexities:
+
+[ O(n) + O(m) ]
+
+In most cases, (n) (the size of the JSON string) is proportional to (m) (the number of trades), so the complexity can be simplified to:
+
+[ O(n) ]
+
+The algorithmic complexity of the fetchAggTrades function is (O(n)), where (n) is the size of the JSON string being parsed. This is a linear time complexity, indicating that the time taken to parse and format the trades grows linearly with the size of the input JSON data.
+
+If the size of the JSON data increases, the time taken to parse and format the trades will also increase linearly. This linear relationship between the input size and the time taken to process the data is a characteristic of algorithms with linear time complexity. If we were to parse from multiple streams, the time complexity would be O(n*m), where n is the number of streams and m is the size of the JSON string and a possible optimization would be to use a multi-threaded approach to parse the streams concurrently.
