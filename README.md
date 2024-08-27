@@ -135,12 +135,12 @@ Time taken to parse trades: 0.000353793 seconds
 
 Since the JSON parsing and formatting trades are sequential operations, the overall complexity is the sum of their complexities:
 
-$ O(n) + O(m) $
+$O(n) + O(m)$
 
 In most cases, $(n)$ (the size of the JSON string) is proportional to $(m)$ (the number of trades), so the complexity can be simplified to:
 
-$ O(n) $
+$O(n)$
 
-The algorithmic complexity of the fetchAggTrades function is (O(n)), where $(n)$ is the size of the JSON string being parsed. This is a linear time complexity, indicating that the time taken to parse and format the trades grows linearly with the size of the input JSON data.
+The algorithmic complexity of the fetchAggTrades function is $(O(n))$, where $(n)$ is the size of the JSON string being parsed. This is a linear time complexity, indicating that the time taken to parse and format the trades grows linearly with the size of the input JSON data.
 
 If the size of the JSON data increases, the time taken to parse and format the trades will also increase linearly. This linear relationship between the input size and the time taken to process the data is a characteristic of algorithms with linear time complexity. If we were to parse from multiple streams, the time complexity would be $O(n*m)$, where $n$ is the number of streams and $m$ is the size of the JSON string and a possible optimization would be to use a multi-threaded approach to parse the streams concurrently or a distributed system to parse the streams in parallel.
