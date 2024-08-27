@@ -4,8 +4,6 @@
 2. Installed g++ in the Debian container
 3. Installed the C++ extension in VS Code and the C++ Intellisense extension
 4. Created a task.json file to compile the code, the task.json file is in the .vscode folder and the command to compile the code is `g++ -g -o main main.cpp`. I can call the task by pressing `Ctrl+Shift+B` in VS Code and it will compile the code. I can then run the code by typing `./main` in the terminal.
-5. I created the main.cpp file and the HashTable.cpp file. The main.cpp file contains the main function and the HashTable.cpp file contains the implementation of the HashTable class.
-
 # Task 1: Data Structures and Algorithms
 
 ## Description
